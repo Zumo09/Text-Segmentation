@@ -8,4 +8,4 @@ NLP project
 
 Unzip input.zip in this folder
 
-Download weights from https://drive.google.com/file/d/1Bq4YvmpVSDMDfr_GwjxX2imNGygRcufS/view?ts=633efa69
+Download weights from https://drive.google.com/file/d/1Bq4YvmpVSDMDfr_GwjxX2imNGygRcufS/view?ts=633efa69 and place them in this folder
