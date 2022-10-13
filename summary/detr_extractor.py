@@ -83,9 +83,6 @@ class DETRExtractor:
         filtered = list(reduce(lambda a, b: a.union(b), indexes))
         filtered.sort()
 
-        # if not max(filtered) < len(splitted):
-        #     print("len", len(splitted), ", max", max(filtered))
-        #     return "a"
         return " ".join(splitted[i] for i in filtered)
 
     @torch.no_grad()

@@ -23,14 +23,13 @@ class CriterionDETR(nn.Module):
         weight_dict: Dict[str, float],
         losses: List[str],
         gamma: float,
-        class_weights: Optional[np.ndarray]
+        class_weights: Optional[np.ndarray],
     ):
         """Create the criterion.
         Parameters:
             num_classes: number of object categories, omitting the special no-object category
             matcher: module able to compute a matching between targets and proposals
             weight_dict: dict containing as key the names of the losses and as values their relative weight.
-            # eos_coef: relative classification weight applied to the no-object category
             losses: list of all the losses to be applied. See get_loss for list of available losses.
             gamma: parameter for the focal loss (0 to disable)
         """
@@ -46,7 +45,7 @@ class CriterionDETR(nn.Module):
         else:
             assert len(class_weights) == num_classes + 1
             class_weight = torch.Tensor(class_weights)
-            
+
         self.register_buffer("class_weight", class_weight)
 
     def loss_labels(self, outputs, targets, indices, num_boxes):

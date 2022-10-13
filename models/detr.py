@@ -161,12 +161,4 @@ class PrepareInputs:
         self.tokenizer = tokenizer
 
     def __call__(self, docs):
-        # tokens = [
-        #     self.tokenizer(text, return_tensors="pt").input_ids.squeeze()
-        #     for text in docs
-        # ]
-        # return torch.nn.utils.rnn.pad_sequence(
-        #     tokens, batch_first=True, padding_value=0.0
-        # )
-
         return self.tokenizer(docs, padding=True, return_tensors="pt").input_ids
